@@ -4,6 +4,9 @@
         5000,
         5001
     ],
+    "settings": {
+        "terminal.integrated.automationShell.linux": "bin/bash/"
+    },
     "extensions": [
         "ionide.ionide-fsharp"
     ],
