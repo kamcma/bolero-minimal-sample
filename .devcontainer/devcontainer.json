@@ -1,0 +1,17 @@
+{
+    "image": "mcr.microsoft.com/dotnet/core/sdk:3.0",
+    "appPort": [
+        5000,
+        5001
+    ],
+    "extensions": [
+        "ionide.ionide-fsharp"
+    ],
+    "runArgs": [
+        "-e",
+        "ASPNETCORE_ENVIRONMENT=Development",
+        "-e",
+        "ASPNETCORE_URLS=http://0.0.0.0:5000;https://0.0.0.0:5001"
+    ],
+    "postCreateCommand": "dotnet restore"
+}
