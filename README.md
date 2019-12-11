@@ -1,7 +1,7 @@
 ## Prerequisites
 - Docker
 - Visual Studio Code with Remote - Containers extension
-- optionally, pre-download the development container image with `docker pull mcr.microsoft.com/dotnet/core/sdk:3.0`
+- optionally, pre-download the development container image with `docker pull mcr.microsoft.com/dotnet/core/sdk:3.1`
 
 ## To run
 
