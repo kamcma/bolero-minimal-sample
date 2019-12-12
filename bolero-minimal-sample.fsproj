@@ -13,10 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bolero" Version="0.9-preview*" />
-    <PackageReference Include="Bolero.Build" Version="0.9-preview*" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0-preview9*" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.0-preview9*" PrivateAssets="all" />
+    <PackageReference Include="Bolero" Version="0.10-preview*" />
+    <PackageReference Include="Bolero.Build" Version="0.10-preview*" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0-preview*" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.0-preview*" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
