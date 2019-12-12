@@ -1,8 +1,5 @@
 {
     "image": "mcr.microsoft.com/dotnet/core/sdk:3.1",
-    "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
-    },
     "appPort": [
         5000,
         5001
@@ -10,11 +7,9 @@
     "extensions": [
         "ionide.ionide-fsharp"
     ],
-    "runArgs": [
-        "-e",
-        "ASPNETCORE_ENVIRONMENT=Development",
-        "-e",
-        "ASPNETCORE_URLS=http://0.0.0.0:5000;https://0.0.0.0:5001"
-    ],
+    "containerEnv": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://0.0.0.0:5000;https://0.0.0.0:5001"
+    },
     "postCreateCommand": "dotnet restore"
 }
