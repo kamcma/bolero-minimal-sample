@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <StaticWebAssetsEnabled>true</StaticWebAssetsEnabled>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,10 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bolero" Version="0.11-preview*" />
-    <PackageReference Include="Bolero.Build" Version="0.11-preview*" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.1-preview*" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.1-preview*" PrivateAssets="all" />
+    <PackageReference Include="Bolero" Version="0.12-preview*" />
+    <PackageReference Include="Bolero.Build" Version="0.12-preview*" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2-preview*" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2-preview*" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
