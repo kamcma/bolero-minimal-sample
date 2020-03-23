@@ -7,6 +7,10 @@
     "extensions": [
         "ionide.ionide-fsharp"
     ],
+    "settings": {
+        "FAKE.targetsOutline": false,
+        "FSharp.suggestGitignore": false,
+    },
     "containerEnv": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_URLS": "http://0.0.0.0:5000;https://0.0.0.0:5001"
