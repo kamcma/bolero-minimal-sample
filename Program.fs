@@ -51,12 +51,12 @@ module MultiCounter =
     let update msg model =
         match msg with
         | Counter1 msg' ->
-            let res, cmd = Counter.update msg' model.Counter1
-            { model with Counter1 = res }, Cmd.map Counter1 cmd
+            let counter1, counter1Cmd = Counter.update msg' model.Counter1
+            { model with Counter1 = counter1 }, Cmd.map Counter1 counter1Cmd
         | Counter2 msg' ->
-            let res, cmd = Counter.update msg' model.Counter2
-            { model with Counter2 = res }, Cmd.map Counter2 cmd
-    
+            let counter2, counter2Cmd = Counter.update msg' model.Counter2
+            { model with Counter2 = counter2 }, Cmd.map Counter2 counter2Cmd
+  
     let view model (dispatch: Msg -> unit) =
         div [] [
             ecomp<Counter.View, _, _> [] model.Counter1 (Counter1 >> dispatch)
