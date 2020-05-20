@@ -1,5 +1,6 @@
 ﻿module Counter =
     open Elmish
+    open Bolero
     open Bolero.Html
 
     type State =
@@ -16,13 +17,15 @@
         match msg with
         | Increment -> { model with Count = model.Count + 1 }, Cmd.none
         | Decrement -> { model with Count = model.Count - 1 }, Cmd.none
-    
-    let view model dispatch =
-        div [] [
-            button [ on.click (fun _ -> dispatch Decrement) ] [ text "-" ]
-            text (string model.Count)
-            button [ on.click (fun _ -> dispatch Increment) ] [ text "+" ]
-        ]
+        
+    type View() =
+        inherit ElmishComponent<State, Msg>()
+        override this.View model dispatch =
+            div [] [
+                button [ on.click (fun _ -> dispatch Decrement) ] [ text "-" ]
+                text (string model.Count)
+                button [ on.click (fun _ -> dispatch Increment) ] [ text "+" ]
+            ]
 
 module MultiCounter =
     open Elmish
@@ -56,8 +59,8 @@ module MultiCounter =
     
     let view model (dispatch: Msg -> unit) =
         div [] [
-            Counter.view model.Counter1 (Counter1 >> dispatch)
-            Counter.view model.Counter2 (Counter2 >> dispatch)
+            ecomp<Counter.View, _, _> [] model.Counter1 (Counter1 >> dispatch)
+            ecomp<Counter.View, _, _> [] model.Counter2 (Counter2 >> dispatch)
         ]
 
 
