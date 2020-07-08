@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bolero" Version="0.13.*" />
-    <PackageReference Include="Bolero.Build" Version="0.13.*" PrivateAssets="all" />
+    <PackageReference Include="Bolero" Version="0.14.*" />
+    <PackageReference Include="Bolero.Build" Version="0.14.*" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.*" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.*" PrivateAssets="all" />
   </ItemGroup>
