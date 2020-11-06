@@ -19,10 +19,15 @@ module Counter =
         | Decrement -> { model with Count = model.Count - 1 }, Cmd.none
 
     let view model dispatch =
-        div []
-            [ button [ on.click (fun _ -> dispatch Decrement) ] [ text "-" ]
-              text (string model.Count)
-              button [ on.click (fun _ -> dispatch Increment) ] [ text "+" ] ]
+        div [] [
+            button [ on.click (fun _ -> dispatch Decrement) ] [
+                text "-"
+            ]
+            text (string model.Count)
+            button [ on.click (fun _ -> dispatch Increment) ] [
+                text "+"
+            ]
+        ]
 
 module MultiCounter =
     open Bolero.Html
@@ -40,9 +45,8 @@ module MultiCounter =
         let counter2, counter2Cmd = Counter.init ()
         { Counter1 = counter1
           Counter2 = counter2 },
-        Cmd.batch
-            [ Cmd.map Counter1 counter1Cmd
-              Cmd.map Counter2 counter2Cmd ]
+        Cmd.batch [ Cmd.map Counter1 counter1Cmd
+                    Cmd.map Counter2 counter2Cmd ]
 
     let update msg model =
         match msg with
@@ -54,9 +58,10 @@ module MultiCounter =
             { model with Counter2 = counter2 }, Cmd.map Counter2 counter2Cmd
 
     let view model (dispatch: Msg -> unit) =
-        div []
-            [ lazyComp2 Counter.view model.Counter1 (Counter1 >> dispatch)
-              lazyComp2 Counter.view model.Counter2 (Counter2 >> dispatch) ]
+        div [] [
+            lazyComp2 Counter.view model.Counter1 (Counter1 >> dispatch)
+            lazyComp2 Counter.view model.Counter2 (Counter2 >> dispatch)
+        ]
 
 open Microsoft.AspNetCore.Components.WebAssembly.Hosting
 open Bolero
