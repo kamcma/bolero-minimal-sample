@@ -68,7 +68,9 @@ open Bolero
 
 type BoleroMinimalSample() =
     inherit ProgramComponent<MultiCounter.State, MultiCounter.Msg>()
-    override this.Program = Program.mkProgram (fun _ -> MultiCounter.init ()) MultiCounter.update MultiCounter.view
+
+    override this.Program =
+        Program.mkProgram (fun _ -> MultiCounter.init ()) MultiCounter.update MultiCounter.view
 
 [<EntryPoint>]
 let main argv =
